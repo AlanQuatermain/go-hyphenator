@@ -1,0 +1,26 @@
+h1=. Hyphenation for Go
+
+p=. Version 1.0 -- 20 July 2010
+
+p=. By "Jim Dovey":mailto:jimdovey@mac.com
+
+h3. Requirements
+
+* The "Go Trie package":http://github.com/AlanQuatermain/go-trie
+
+h2. Introduction
+
+This project implements a hyphenator which will take a block of text and hyphenate it according to some provided TeX-style rules. At present it doesn't interpret the TeX values verbatim, it expects them to be encoded a bit like Go source code, so I can use Go's Scanner class to parse it.
+
+For more information on the TeX hyphenation algorithm, refer to the "original paper by Franklin Mark Liang":http://www.tug.org/docs/liang/liang-thesis.pdf.
+
+h2. Installation
+
+The simplest way to install is using goinstall:
+
+> goinstall "github.com/AlanQuatermain/go-trie"
+> goinstall "github.com/AlanQuatermain/go-hyphenator"
+
+This will install the package in such a way that it must be imported using the above quoted string as its import statement, i.e. <code>import hyphenator "github.com/AlanQuatermain/go-hyphenator"</code>.
+
+Alternatively you can clone the code directly and install it using <code>make install</code>. This will enable you to import it in your code using just <code>import "hyphenator"</code>.
